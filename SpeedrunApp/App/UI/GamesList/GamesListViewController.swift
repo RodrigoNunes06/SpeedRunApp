@@ -31,6 +31,7 @@ class GamesListViewController: UIViewController {
         super.viewDidLoad()
         
         setupNavigationBar()
+        setupCollectionView()
     }
     
     //MARK: Private Methods
@@ -40,6 +41,10 @@ class GamesListViewController: UIViewController {
     
     private func setupNavigationBar() {
         self.navigationItem.title = "Games List"
+    }
+    
+    private func setupCollectionView() {
+        
     }
     
 }
