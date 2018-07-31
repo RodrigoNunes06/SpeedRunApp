@@ -11,9 +11,17 @@ import Foundation
 final class UserEntityDataMapper {
     
     func transform(entity: UserEntity?) -> User {
-        let user = User()
+        let domain = User()
+        if let entity = entity {
+            if let id = entity.id {
+                domain.id = id
+            }
+            if let name = entity.name {
+                domain.name = name
+            }
+        }
         
-        return user
+        return domain
     }
     
 }

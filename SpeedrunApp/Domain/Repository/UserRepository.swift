@@ -10,6 +10,6 @@ import Foundation
 
 protocol UserRepository {
     
-    func user() -> User
+    func user(withId id: String, completion: @escaping (User?, Error?) -> Void)
     
 }

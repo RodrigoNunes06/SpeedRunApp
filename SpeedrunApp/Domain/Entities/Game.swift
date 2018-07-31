@@ -11,16 +11,18 @@ import ObjectMapper
 
 final class Game: Mappable {
     
-    init() {
-        
-    }
+    var id: String = ""
+    var name: String = ""
+    var gameLogoURL: String = ""
     
-    required init?(map: Map) {
-        
-    }
+    init() {}
+    
+    required init?(map: Map) {}
     
     func mapping(map: Map) {
-        
+        id             <- map["id"]
+        name           <- map["name"]
+        gameLogoURL    <- map["gameLogoURL"]
     }
     
 }

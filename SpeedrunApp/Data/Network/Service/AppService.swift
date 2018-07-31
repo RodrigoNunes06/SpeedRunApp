@@ -14,6 +14,7 @@ final class AppService: NetworkProxy {
     func requestGameList(completion: @escaping([GameEntity]?, Error?) -> Void) {
         let serviceRequest = NetworkRequest()
         serviceRequest.path = Api.pathGames
+        serviceRequest.method = .get
         
         processArray(networkRequest: serviceRequest) { (objectArray, error) in
             completion(objectArray, error)
@@ -22,8 +23,18 @@ final class AppService: NetworkProxy {
     
     func requestGame(withId id: String, completion: @escaping(GameEntity?, Error?) -> Void) {
         let serviceRequest = NetworkRequest()
-        serviceRequest.path = Api.pathUsers
-        serviceRequest.parameters = ["userId" : id]
+        serviceRequest.path = String(format: Api.pathGame, id)
+        serviceRequest.method = .get
+        
+        process(networkRequest: serviceRequest) { (object, error) in
+            completion(object, error)
+        }
+    }
+    
+    func requestUser(withId id:String, completion: @escaping(UserEntity?, Error?) -> Void) {
+        let serviceRequest = NetworkRequest()
+        serviceRequest.path = String(format: Api.pathUser, id)
+        serviceRequest.method = .get
         
         process(networkRequest: serviceRequest) { (object, error) in
             completion(object, error)
