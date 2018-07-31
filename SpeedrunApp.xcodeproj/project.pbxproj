@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		2F5C8E7A43FE8475217CA037 /* Pods_SpeedrunApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EEE1DC7D1DCCE9AEBDFDD73 /* Pods_SpeedrunApp.framework */; };
 		9F79FE60210DD7DD003EE864 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F79FE5F210DD7DD003EE864 /* AppDelegate.swift */; };
-		9F79FE62210DD7DD003EE864 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F79FE61210DD7DD003EE864 /* ViewController.swift */; };
-		9F79FE65210DD7DD003EE864 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F79FE63210DD7DD003EE864 /* Main.storyboard */; };
 		9F79FE67210DD7DD003EE864 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F79FE66210DD7DD003EE864 /* Assets.xcassets */; };
 		9F79FE6A210DD7DD003EE864 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F79FE68210DD7DD003EE864 /* LaunchScreen.storyboard */; };
 		9F79FE75210DD7DD003EE864 /* SpeedrunAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F79FE74210DD7DD003EE864 /* SpeedrunAppTests.swift */; };
@@ -32,6 +30,9 @@
 		9FA25EFD2110F2CF008315D0 /* GetGamesListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA25EFC2110F2CF008315D0 /* GetGamesListUseCase.swift */; };
 		9FA25EFF2110F341008315D0 /* BaseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA25EFE2110F341008315D0 /* BaseUseCase.swift */; };
 		9FA25F012110F700008315D0 /* GetUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA25F002110F700008315D0 /* GetUserUseCase.swift */; };
+		9FA25F0621110882008315D0 /* GamesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA25F0521110882008315D0 /* GamesListViewController.swift */; };
+		9FA25F0821110891008315D0 /* GamesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FA25F0721110891008315D0 /* GamesListViewController.xib */; };
+		9FA25F0A211108A4008315D0 /* GamesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA25F09211108A4008315D0 /* GamesListViewModel.swift */; };
 		FDFCFE8A1BFAAF94AF010B80 /* Pods_SpeedrunAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 333A560225F4C701062C251D /* Pods_SpeedrunAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,8 +53,6 @@
 		51AB82A417EC820B51243391 /* Pods-SpeedrunAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedrunAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedrunAppTests/Pods-SpeedrunAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		9F79FE5C210DD7DD003EE864 /* SpeedrunApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeedrunApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F79FE5F210DD7DD003EE864 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9F79FE61210DD7DD003EE864 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9F79FE64210DD7DD003EE864 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F79FE66210DD7DD003EE864 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F79FE69210DD7DD003EE864 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F79FE6B210DD7DD003EE864 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,6 +77,9 @@
 		9FA25EFC2110F2CF008315D0 /* GetGamesListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGamesListUseCase.swift; sourceTree = "<group>"; };
 		9FA25EFE2110F341008315D0 /* BaseUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUseCase.swift; sourceTree = "<group>"; };
 		9FA25F002110F700008315D0 /* GetUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserUseCase.swift; sourceTree = "<group>"; };
+		9FA25F0521110882008315D0 /* GamesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesListViewController.swift; sourceTree = "<group>"; };
+		9FA25F0721110891008315D0 /* GamesListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GamesListViewController.xib; sourceTree = "<group>"; };
+		9FA25F09211108A4008315D0 /* GamesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesListViewModel.swift; sourceTree = "<group>"; };
 		A01FB17076FEE7DB34342D27 /* Pods-SpeedrunApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedrunApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedrunApp/Pods-SpeedrunApp.release.xcconfig"; sourceTree = "<group>"; };
 		FCA3872154DB17E495552071 /* Pods-SpeedrunApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedrunApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedrunApp/Pods-SpeedrunApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,11 +167,9 @@
 		9FA25ECD210E3057008315D0 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				9F79FE61210DD7DD003EE864 /* ViewController.swift */,
 				9F79FE5F210DD7DD003EE864 /* AppDelegate.swift */,
-				9F79FE63210DD7DD003EE864 /* Main.storyboard */,
-				9F79FE66210DD7DD003EE864 /* Assets.xcassets */,
-				9F79FE68210DD7DD003EE864 /* LaunchScreen.storyboard */,
+				9FA25F0B21110F41008315D0 /* Resources */,
+				9FA25F022111014E008315D0 /* UI */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -278,6 +278,41 @@
 			path = UseCases;
 			sourceTree = "<group>";
 		};
+		9FA25F022111014E008315D0 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				9FA25F04211103E0008315D0 /* GamesList */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		9FA25F04211103E0008315D0 /* GamesList */ = {
+			isa = PBXGroup;
+			children = (
+				9FA25F0C21110FCB008315D0 /* Cell */,
+				9FA25F0521110882008315D0 /* GamesListViewController.swift */,
+				9FA25F0721110891008315D0 /* GamesListViewController.xib */,
+				9FA25F09211108A4008315D0 /* GamesListViewModel.swift */,
+			);
+			path = GamesList;
+			sourceTree = "<group>";
+		};
+		9FA25F0B21110F41008315D0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9F79FE66210DD7DD003EE864 /* Assets.xcassets */,
+				9F79FE68210DD7DD003EE864 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9FA25F0C21110FCB008315D0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -364,9 +399,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FA25F0821110891008315D0 /* GamesListViewController.xib in Resources */,
 				9F79FE6A210DD7DD003EE864 /* LaunchScreen.storyboard in Resources */,
 				9F79FE67210DD7DD003EE864 /* Assets.xcassets in Resources */,
-				9F79FE65210DD7DD003EE864 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,12 +423,18 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SpeedrunApp/Pods-SpeedrunApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -447,11 +488,12 @@
 				9FA25EE0210E57CE008315D0 /* NetworkProxy.swift in Sources */,
 				9FA25EF9210FC657008315D0 /* GameRepositoryImp.swift in Sources */,
 				9FA25EF7210FB89D008315D0 /* GameEntityDataMapper.swift in Sources */,
-				9F79FE62210DD7DD003EE864 /* ViewController.swift in Sources */,
+				9FA25F0A211108A4008315D0 /* GamesListViewModel.swift in Sources */,
 				9FA25EE4210FA247008315D0 /* AppService.swift in Sources */,
 				9FA25EED210FA71A008315D0 /* GameRepository.swift in Sources */,
 				9F79FE60210DD7DD003EE864 /* AppDelegate.swift in Sources */,
 				9FA25EF5210FB88F008315D0 /* UserEntityDataMapper.swift in Sources */,
+				9FA25F0621110882008315D0 /* GamesListViewController.swift in Sources */,
 				9FA25EDC210E3F2A008315D0 /* NetworkConstants.swift in Sources */,
 				9FA25EEB210FA6D9008315D0 /* User.swift in Sources */,
 				9FA25F012110F700008315D0 /* GetUserUseCase.swift in Sources */,
@@ -485,14 +527,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		9F79FE63210DD7DD003EE864 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9F79FE64210DD7DD003EE864 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9F79FE68210DD7DD003EE864 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -693,7 +727,7 @@
 				9F79FE78210DD7DD003EE864 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		9F79FE79210DD7DD003EE864 /* Build configuration list for PBXNativeTarget "SpeedrunApp" */ = {
 			isa = XCConfigurationList;
@@ -702,7 +736,7 @@
 				9F79FE7B210DD7DD003EE864 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		9F79FE7C210DD7DD003EE864 /* Build configuration list for PBXNativeTarget "SpeedrunAppTests" */ = {
 			isa = XCConfigurationList;
@@ -711,7 +745,7 @@
 				9F79FE7E210DD7DD003EE864 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

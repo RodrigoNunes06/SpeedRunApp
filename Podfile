@@ -7,6 +7,10 @@ target 'SpeedrunApp' do
 
   pod 'Alamofire', '~> 4.7'
   pod 'ObjectMapper', '~> 3.3'
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'Kingfisher'
+  pod 'Action'
 
   target 'SpeedrunAppTests' do
     inherit! :search_paths
