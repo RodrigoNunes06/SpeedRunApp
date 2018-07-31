@@ -1,0 +1,6 @@
+framework module Pods_SpeedrunApp {
+  umbrella header "Pods-SpeedrunApp-umbrella.h"
+
+  export *
+  module * { export * }
+}
