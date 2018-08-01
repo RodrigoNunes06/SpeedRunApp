@@ -38,8 +38,8 @@ final class Network: SessionManager {
             if let error = response.error {
                 completion(nil, error)
             } else {
-                if let JSON = response.data {
-                    let parsedObject = Mapper<T>().map(JSONObject: JSON)
+                if let JSON = response.result.value as? [String : AnyObject] {
+                    let parsedObject = Mapper<T>().map(JSONObject: JSON["data"])
                     completion(parsedObject, nil)
                 }
             }
@@ -49,13 +49,13 @@ final class Network: SessionManager {
     func requestArray<T: Mappable>(networkRequest: NetworkRequest, completion:@escaping(([T]?, Error?) -> Void)) {
         let headers = setupHeaders(request: networkRequest)
         
-        Alamofire.request(networkRequest.url, method: networkRequest.method, parameters: networkRequest.parameters, encoding: networkRequest.encoding(), headers: headers).validate().responseJSON { (response) in
+        Alamofire.request(networkRequest.url, method: networkRequest.method, parameters: networkRequest.parameters, encoding: networkRequest.encoding(), headers: headers).validate().responseJSON { (dataResponse) in
             
-            if let error = response.error {
+            if let error = dataResponse.error {
                 completion(nil, error)
             } else {
-                if let JSON = response.data {
-                    let parsedObject = Mapper<T>().mapArray(JSONObject: JSON)
+                if let JSON = dataResponse.result.value as? [String: AnyObject] {
+                    let parsedObject = Mapper<T>().mapArray(JSONObject: JSON["data"])
                     completion(parsedObject, nil)
                 }
             }

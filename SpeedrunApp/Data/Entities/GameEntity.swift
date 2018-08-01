@@ -22,7 +22,7 @@ final class GameEntity: Mappable {
     func mapping(map: Map) {
         id          <- map["id"]
         name        <- map["names.international"]
-        gameLogoURL <- map["assets.logo.uri"]
+        gameLogoURL <- map["assets.cover-large.uri"]
     }
     
 }
