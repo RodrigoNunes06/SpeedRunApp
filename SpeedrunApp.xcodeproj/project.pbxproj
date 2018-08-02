@@ -43,7 +43,7 @@
 		9FA25F22211290A1008315D0 /* RunEntityDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA25F21211290A1008315D0 /* RunEntityDataMapper.swift */; };
 		9FA25F24211290B2008315D0 /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA25F23211290B2008315D0 /* Run.swift */; };
 		9FA25F26211290BF008315D0 /* RunRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA25F25211290BF008315D0 /* RunRepository.swift */; };
-		9FA25F28211290D0008315D0 /* GetRunUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA25F27211290D0008315D0 /* GetRunUseCase.swift */; };
+		9FA25F28211290D0008315D0 /* GetRunsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA25F27211290D0008315D0 /* GetRunsUseCase.swift */; };
 		9FA25F2A211290E1008315D0 /* RunRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA25F29211290E1008315D0 /* RunRepositoryImp.swift */; };
 		FDFCFE8A1BFAAF94AF010B80 /* Pods_SpeedrunAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 333A560225F4C701062C251D /* Pods_SpeedrunAppTests.framework */; };
 /* End PBXBuildFile section */
@@ -102,7 +102,7 @@
 		9FA25F21211290A1008315D0 /* RunEntityDataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RunEntityDataMapper.swift; path = /Users/deboravilla/Desktop/rodrigo/SpeedrunApp/SpeedrunApp/Data/Entities/Mappers/RunEntityDataMapper.swift; sourceTree = "<absolute>"; };
 		9FA25F23211290B2008315D0 /* Run.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
 		9FA25F25211290BF008315D0 /* RunRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunRepository.swift; sourceTree = "<group>"; };
-		9FA25F27211290D0008315D0 /* GetRunUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRunUseCase.swift; sourceTree = "<group>"; };
+		9FA25F27211290D0008315D0 /* GetRunsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRunsUseCase.swift; sourceTree = "<group>"; };
 		9FA25F29211290E1008315D0 /* RunRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunRepositoryImp.swift; sourceTree = "<group>"; };
 		A01FB17076FEE7DB34342D27 /* Pods-SpeedrunApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedrunApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedrunApp/Pods-SpeedrunApp.release.xcconfig"; sourceTree = "<group>"; };
 		FCA3872154DB17E495552071 /* Pods-SpeedrunApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedrunApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedrunApp/Pods-SpeedrunApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -303,7 +303,7 @@
 				9FA25EFE2110F341008315D0 /* BaseUseCase.swift */,
 				9FA25EFC2110F2CF008315D0 /* GetGamesListUseCase.swift */,
 				9FA25F002110F700008315D0 /* GetUserUseCase.swift */,
-				9FA25F27211290D0008315D0 /* GetRunUseCase.swift */,
+				9FA25F27211290D0008315D0 /* GetRunsUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -545,7 +545,7 @@
 				9FA25F0A211108A4008315D0 /* GamesListViewModel.swift in Sources */,
 				9FA25EE4210FA247008315D0 /* AppService.swift in Sources */,
 				9FA25F22211290A1008315D0 /* RunEntityDataMapper.swift in Sources */,
-				9FA25F28211290D0008315D0 /* GetRunUseCase.swift in Sources */,
+				9FA25F28211290D0008315D0 /* GetRunsUseCase.swift in Sources */,
 				9FA25EED210FA71A008315D0 /* GameRepository.swift in Sources */,
 				9F79FE60210DD7DD003EE864 /* AppDelegate.swift in Sources */,
 				9FA25EF5210FB88F008315D0 /* UserEntityDataMapper.swift in Sources */,

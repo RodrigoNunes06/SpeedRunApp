@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+protocol RunRepository {
+    
+    func runs(withId id:String, completion:  @escaping ([Run]?, Error?) -> Void)
+    
+}

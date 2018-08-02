@@ -25,5 +25,5 @@ struct Api {
     
     static let pathGame = "/games/%@"
     static let pathUser = "/users/%@"
-    static let pathRun = "/runs/%@"
+    static let pathRun = "/runs?game=%@"
 }

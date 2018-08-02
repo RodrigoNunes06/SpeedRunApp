@@ -41,4 +41,14 @@ final class AppService: NetworkProxy {
         }
     }
     
+    func requestRuns(withId id: String, completion: @escaping([RunEntity]?, Error?) -> Void) {
+        let serviceRequest = NetworkRequest()
+        serviceRequest.path = String(format: Api.pathRun, id)
+        serviceRequest.method = .get
+        
+        processArray(networkRequest: serviceRequest) { (objectArray, error) in
+            completion(objectArray, error)
+        }
+    }
+    
 }

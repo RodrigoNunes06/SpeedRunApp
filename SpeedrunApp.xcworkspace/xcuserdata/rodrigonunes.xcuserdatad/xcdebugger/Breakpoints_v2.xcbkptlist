@@ -9,13 +9,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SpeedrunApp/App/UI/GamesList/Cell/GameCell.swift"
-            timestampString = "554864670.0710109"
+            filePath = "SpeedrunApp/App/UI/GameDetail/GameDetailViewModel.swift"
+            timestampString = "554870096.168774"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "setupRx()"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "requestUser(withId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SpeedrunApp/App/UI/GameDetail/GameDetailViewModel.swift"
+            timestampString = "554870096.169294"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "requestUser(withId:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

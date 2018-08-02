@@ -42,6 +42,12 @@ class GameDetailViewController: UIViewController {
         setupRx()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        viewModel.onViewWillAppear()
+    }
+    
     private func createViewModel() -> GameDetailViewModel {
         return GameDetailViewModel()
     }

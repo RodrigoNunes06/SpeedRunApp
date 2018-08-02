@@ -31,7 +31,7 @@ final class GameRepositoryImp: GameRepository {
                 let gameList = gameEntityList?.map({ (gameEntity) -> Game in
                     return GameEntityDataMapper().transform(entity: gameEntity)
                 })
-                completion(gameList, error)
+                completion(gameList, nil)
             }
         }
     }
