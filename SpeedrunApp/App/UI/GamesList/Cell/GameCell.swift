@@ -25,6 +25,7 @@ class GameCell: UICollectionViewCell {
         setupUI()
     }
     
+    //MARK: Public Methods
     func set(viewModel: GameCellViewModel) {
         self.viewModel = viewModel
         setupRx()
@@ -38,12 +39,13 @@ class GameCell: UICollectionViewCell {
         return String(describing: GameCell.self)
     }
     
-    func setupUI() {
+    //MARK: Private Methods
+    private func setupUI() {
         self.layer.cornerRadius = 5
         self.clipsToBounds = true
     }
     
-    func setupRx() {
+    private func setupRx() {
         guard let viewModel = viewModel else { return }
         
         viewModel.gameLogo.subscribe(onNext: { [weak self] imageURL in

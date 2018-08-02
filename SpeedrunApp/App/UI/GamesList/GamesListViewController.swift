@@ -58,6 +58,7 @@ class GamesListViewController: UIViewController {
     
     private func setupNavigationBar() {
         self.navigationItem.title = "Games List"
+        self.navigationController?.navigationBar.barTintColor = .gray
     }
 
     private func setupFlowLayout() {
@@ -73,7 +74,7 @@ class GamesListViewController: UIViewController {
     private func setupCollectionView() {
         gamesCollectionView.delegate = self
         gamesCollectionView.dataSource = self
-        gamesCollectionView.backgroundColor = .lightGray
+        gamesCollectionView.backgroundColor = .gray
         gamesCollectionView.showsHorizontalScrollIndicator = false
         gamesCollectionView.setCollectionViewLayout(flowLayout, animated: true)
         
