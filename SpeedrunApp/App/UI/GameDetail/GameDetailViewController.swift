@@ -67,7 +67,7 @@ class GameDetailViewController: UIViewController {
         viewModel.gameTitle.subscribe(onNext: { [weak self] title in
             guard let `self` = self else { return }
             
-            self.gameTitle.text = title
+            self.gameTitle.text = title == "" ? "N/A" : title
         }).disposed(by: disposeBag)
         
         viewModel.gameLogo.subscribe(onNext: { [weak self] logoUrl in
@@ -79,13 +79,17 @@ class GameDetailViewController: UIViewController {
         viewModel.firstRunDetail.subscribe(onNext: { [weak self] firstRunDetail in
             guard let `self` = self else { return }
             
-            self.firstRunLabel.text = "Details: " + firstRunDetail
+            let detail = firstRunDetail == "" ? "N/A" : firstRunDetail
+            
+            self.firstRunLabel.text = "Details: " + detail
         }).disposed(by: disposeBag)
         
         viewModel.playerName.subscribe(onNext: { [weak self] playerName in
             guard let `self` = self else { return }
             
-            self.playerNameLabel.text = "Player Name: " + playerName
+            let player = playerName == "" ? "N/A" : playerName
+            
+            self.playerNameLabel.text = "Player Name: " + player
         }).disposed(by: disposeBag)
         
         viewModel.runTime.subscribe(onNext: { [weak self] time in

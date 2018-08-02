@@ -117,7 +117,7 @@ extension GamesListViewController: UICollectionViewDelegate, UICollectionViewDat
         let height = self.view.frame.size.height;
         let width  = self.view.frame.size.width;
         
-        return CGSize(width: width * 0.5, height: height * 0.5);
+        return CGSize(width: width * 0.4, height: height * 0.3);
     }
 }
 
