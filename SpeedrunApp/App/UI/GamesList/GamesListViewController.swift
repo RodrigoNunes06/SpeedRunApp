@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import NVActivityIndicatorView
 
 class GamesListViewController: UIViewController {
     
@@ -15,6 +16,7 @@ class GamesListViewController: UIViewController {
     
     var viewModel: GamesListViewModel!
     var disposeBag = DisposeBag()
+    var activityIndicator: NVActivityIndicatorView!
     
     private let flowLayout = UICollectionViewFlowLayout()
     
@@ -37,17 +39,13 @@ class GamesListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupActivityIndicator()
         setupViewModel()
         setupNavigationBar()
         setupCollectionView()
         setupFlowLayout()
         setupRx()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        viewModel.onViewWillAppear()
+        viewModel.onViewDidLoad()
     }
     
     //MARK: Private Methods
@@ -62,6 +60,20 @@ class GamesListViewController: UIViewController {
     private func setupNavigationBar() {
         self.navigationItem.title = "Games List"
         self.navigationController?.navigationBar.barTintColor = .gray
+    }
+    
+    private func setupActivityIndicator() {
+        let xCenter = self.view.center.x
+        let yCenter = self.view.center.y
+        let indicatorHeight: CGFloat = 45.0
+        let indicatorWidth: CGFloat = 45.0
+        
+        let frame = CGRect(x: xCenter - indicatorWidth/2, y: yCenter - indicatorHeight/2, width: indicatorWidth, height: indicatorHeight)
+        activityIndicator = NVActivityIndicatorView(frame: frame)
+        activityIndicator.type = .ballBeat
+        activityIndicator.color = UIColor.red
+        
+        self.view.addSubview(activityIndicator)
     }
 
     private func setupFlowLayout() {
@@ -88,6 +100,18 @@ class GamesListViewController: UIViewController {
             guard let `self` = self else { return }
             
             self.gamesCollectionView.reloadData()
+        }).disposed(by: disposeBag)
+        
+        viewModel.showLoadingAction.inputs.subscribe(onNext: { [weak self] _ in
+            guard let `self` = self else { return }
+            
+            self.activityIndicator.startAnimating()
+        }).disposed(by: disposeBag)
+        
+        viewModel.hideLoadingAction.inputs.subscribe(onNext: { [weak self] _ in
+            guard let `self` = self else { return }
+            
+            self.activityIndicator.stopAnimating()
         }).disposed(by: disposeBag)
     }
 }

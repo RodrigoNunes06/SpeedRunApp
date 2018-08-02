@@ -16,8 +16,10 @@ class GamesListViewModel {
     var games: [Game] = []
     let getGamesUseCase = GetGamesListUseCase()
     let reloadAction = CocoaAction { return .empty() }
+    let showLoadingAction = CocoaAction { return .empty() }
+    let hideLoadingAction = CocoaAction { return .empty() }
     
-    func onViewWillAppear() {
+    func onViewDidLoad() {
         requestGames()
     }
     
@@ -49,10 +51,13 @@ class GamesListViewModel {
     }
     
     func requestGames() {
+        showLoadingAction.execute(())
         getGamesUseCase.execute { (gamesArray, error) in
             if let error = error {
+                self.hideLoadingAction.execute(())
                 print("ApiError: \(error)")
             } else if let gamesArray = gamesArray {
+                self.hideLoadingAction.execute(())
                 self.games = gamesArray
                 self.reloadAction.execute(())
             }

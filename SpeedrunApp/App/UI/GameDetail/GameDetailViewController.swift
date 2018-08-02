@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import Kingfisher
+import NVActivityIndicatorView
 
 class GameDetailViewController: UIViewController {
     
@@ -21,6 +22,7 @@ class GameDetailViewController: UIViewController {
     
     var viewModel: GameDetailViewModel!
     var disposeBag = DisposeBag()
+    var activityIndicator: NVActivityIndicatorView!
     
     //MARK: Initializer
     init() {
@@ -37,6 +39,7 @@ class GameDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupActivityIndicator()
         setupNavigationBar()
         setupUI()
         setupRx()
@@ -53,8 +56,22 @@ class GameDetailViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-//        self.navigationItem.title = "Game Detail"
+        self.navigationItem.title = "Game Detail"
         self.navigationController?.navigationBar.barTintColor = .gray
+    }
+    
+    private func setupActivityIndicator() {
+        let xCenter = self.view.center.x
+        let yCenter = self.view.center.y
+        let indicatorHeight: CGFloat = 45.0
+        let indicatorWidth: CGFloat = 45.0
+
+        let frame = CGRect(x: xCenter - indicatorWidth/2, y: yCenter - indicatorHeight/2, width: indicatorWidth, height: indicatorHeight)
+        activityIndicator = NVActivityIndicatorView(frame: frame)
+        activityIndicator.type = .ballBeat
+        activityIndicator.color = UIColor.red
+        
+        self.view.addSubview(activityIndicator)
     }
     
     private func setupUI() {
@@ -102,6 +119,18 @@ class GameDetailViewController: UIViewController {
             guard let `self` = self else { return }
             
             self.viewModel.openVideo()
+        }).disposed(by: disposeBag)
+        
+        viewModel.showLoadingAction.inputs.subscribe(onNext: { [weak self] _ in
+            guard let `self` = self else { return }
+            
+            self.activityIndicator.startAnimating()
+        }).disposed(by: disposeBag)
+        
+        viewModel.hideLoadingAction.inputs.subscribe(onNext: { [weak self] _ in
+            guard let `self` = self else { return }
+            
+            self.activityIndicator.stopAnimating()
         }).disposed(by: disposeBag)
     }
     

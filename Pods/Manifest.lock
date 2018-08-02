@@ -4,6 +4,9 @@ PODS:
     - RxSwift (~> 4.2.0)
   - Alamofire (4.7.3)
   - Kingfisher (4.8.1)
+  - NVActivityIndicatorView (4.3.0):
+    - NVActivityIndicatorView/Presenter (= 4.3.0)
+  - NVActivityIndicatorView/Presenter (4.3.0)
   - ObjectMapper (3.3.0)
   - RxCocoa (4.2.0):
     - RxSwift (~> 4.0)
@@ -13,6 +16,7 @@ DEPENDENCIES:
   - Action
   - Alamofire (~> 4.7)
   - Kingfisher
+  - NVActivityIndicatorView
   - ObjectMapper (~> 3.3)
   - RxCocoa
   - RxSwift
@@ -22,6 +26,7 @@ SPEC REPOS:
     - Action
     - Alamofire
     - Kingfisher
+    - NVActivityIndicatorView
     - ObjectMapper
     - RxCocoa
     - RxSwift
@@ -30,10 +35,11 @@ SPEC CHECKSUMS:
   Action: 3d9486d3da02b572b0a034b6c49ac4c3fbcc8b63
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   Kingfisher: 868c1149679a7ab6869be118faa9b5aed154aaf0
+  NVActivityIndicatorView: 963f62bf9f993fcf23218e55958e5b1761b9504c
   ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
   RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
   RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
 
-PODFILE CHECKSUM: a3aef931467ea9f66d58929fd6ff378f0c9b1753
+PODFILE CHECKSUM: 1a788e4d81d9b6421cde441ec3c353371ed64681
 
 COCOAPODS: 1.5.3

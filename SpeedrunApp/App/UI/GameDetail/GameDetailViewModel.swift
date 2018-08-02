@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 import RxSwift
+import Action
 
 class GameDetailViewModel {
     
@@ -19,6 +20,8 @@ class GameDetailViewModel {
     let firstRunDetail = BehaviorSubject<String>(value: "")
     let playerName = BehaviorSubject<String>(value: "")
     let runTime = BehaviorSubject<Int>(value: 0)
+    let showLoadingAction = CocoaAction { return .empty() }
+    let hideLoadingAction = CocoaAction { return .empty() }
     var gameId = ""
     var userId = ""
     var videoURL = ""
@@ -55,13 +58,17 @@ class GameDetailViewModel {
     }
     
     func requestRun(withId id: String) {
+        showLoadingAction.execute(())
         getRunsUseCase.execute(withId: id) { (runsArray, error) in
             if let error = error {
                 print("ApiError: \(error.localizedDescription)")
+                self.hideLoadingAction.execute(())
             } else if let runsArray = runsArray {
                 if let run = runsArray.first {
                     if let player = run.players.first {
                         self.requestUser(withId: player.id)
+                    } else {
+                        self.hideLoadingAction.execute(())
                     }
                     self.videoURL = run.videoLink
                     self.setup(firstRunDetail: run.comment,runTime: run.runTime)
@@ -73,8 +80,10 @@ class GameDetailViewModel {
     func requestUser(withId id: String) {
         getUserUseCase.execute(withId: id) { (user, error) in
             if let error = error {
+                self.hideLoadingAction.execute(())
                 print("ApiError: \(error.localizedDescription)")
             } else if let user = user {
+                self.hideLoadingAction.execute(())
                 self.setup(playerName: user.name)
             }
         }

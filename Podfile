@@ -11,6 +11,7 @@ target 'SpeedrunApp' do
   pod 'RxCocoa'
   pod 'Kingfisher'
   pod 'Action'
+  pod 'NVActivityIndicatorView'
 
   target 'SpeedrunAppTests' do
     inherit! :search_paths
