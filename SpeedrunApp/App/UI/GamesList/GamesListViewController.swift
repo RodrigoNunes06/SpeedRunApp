@@ -18,8 +18,6 @@ class GamesListViewController: UIViewController {
     
     private let flowLayout = UICollectionViewFlowLayout()
     
-    private let itemWidth = 160
-    private let itemHeight = 250
     private let horizontalMargin: CGFloat = 17.0
     private let verticalMargin: CGFloat = 17.0
     private let minimumCellSpacing: CGFloat = 10.0
@@ -72,7 +70,6 @@ class GamesListViewController: UIViewController {
         flowLayout.minimumInteritemSpacing = minimumCellSpacing
         flowLayout.headerReferenceSize = .zero
         flowLayout.footerReferenceSize = .zero
-        flowLayout.itemSize = CGSize(width: itemWidth, height: itemHeight)
         flowLayout.scrollDirection = .vertical
     }
     
@@ -95,7 +92,7 @@ class GamesListViewController: UIViewController {
     }
 }
 
-extension GamesListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension GamesListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     //MARK: UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numberOfRows(section: section)
@@ -111,11 +108,17 @@ extension GamesListViewController: UICollectionViewDelegate, UICollectionViewDat
         return collectionViewCell
     }
     
-    //MARK: UICollectionViewDataSource
+    //MARK: UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         viewModel.showGameDetail(indexPath: indexPath)
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let height = self.view.frame.size.height;
+        let width  = self.view.frame.size.width;
+        
+        return CGSize(width: width * 0.5, height: height * 0.5);
+    }
 }
 
 
