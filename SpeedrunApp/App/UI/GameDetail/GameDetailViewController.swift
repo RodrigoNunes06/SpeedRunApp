@@ -79,19 +79,19 @@ class GameDetailViewController: UIViewController {
         viewModel.firstRunDetail.subscribe(onNext: { [weak self] firstRunDetail in
             guard let `self` = self else { return }
             
-            self.firstRunLabel.text = firstRunDetail
+            self.firstRunLabel.text = "Details: " + firstRunDetail
         }).disposed(by: disposeBag)
         
         viewModel.playerName.subscribe(onNext: { [weak self] playerName in
             guard let `self` = self else { return }
             
-            self.playerNameLabel.text = playerName
+            self.playerNameLabel.text = "Player Name: " + playerName
         }).disposed(by: disposeBag)
         
         viewModel.runTime.subscribe(onNext: { [weak self] time in
             guard let `self` = self else { return }
             
-            self.runTimeLabel.text = self.secondsToTimeString(seconds: time)
+            self.runTimeLabel.text = "Run Time: " + self.secondsToTimeString(seconds: time)
         }).disposed(by: disposeBag)
         
         watchVideoButton.rx.tap.subscribe(onNext: { [weak self] _ in

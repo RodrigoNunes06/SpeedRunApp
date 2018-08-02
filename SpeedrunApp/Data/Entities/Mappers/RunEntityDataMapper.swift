@@ -21,8 +21,8 @@ final class RunEntityDataMapper {
             if let runTime = entity.runTime {
                 domain.runTime = runTime
             }
-            if let videoLinks = entity.videoLinks {
-                domain.videoLinks = videoLinks
+            if let videoLink = entity.videoLink {
+                domain.videoLink = videoLink
             }
         }
         

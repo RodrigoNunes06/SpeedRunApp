@@ -12,7 +12,7 @@ import ObjectMapper
 final class Run: Mappable {
     
     var id: String = ""
-    var videoLinks: [String : String] = [:]
+    var videoLink: String = ""
     var players: [User] = []
     var runTime: Int = 0
     var comment: String = ""
@@ -23,7 +23,7 @@ final class Run: Mappable {
     
     func mapping(map: Map) {
         id              <- map["id"]
-        videoLinks      <- map["videos.links"]
+        videoLink      <- map["videos.links.0.uri"]
         players         <- map["players"]
         runTime         <- map["times.primary_t"]
         comment         <- map["comment"]

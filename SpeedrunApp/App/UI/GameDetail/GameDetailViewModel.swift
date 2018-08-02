@@ -64,9 +64,7 @@ class GameDetailViewModel {
                     if let player = run.players.first {
                         self.requestUser(withId: player.id)
                     }
-                    if let videoLink = run.videoLinks.first {
-                        self.videoURL = videoLink.value as String
-                    }
+                    self.videoURL = run.videoLink
                     self.setup(firstRunDetail: run.comment,runTime: run.runTime)
                 }
             }
