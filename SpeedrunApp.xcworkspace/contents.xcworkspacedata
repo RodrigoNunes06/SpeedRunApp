@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/deboravilla/Desktop/rodrigo/SpeedrunApp/SpeedrunApp/Data/Entities/Mappers/RunEntityDataMapper.swift">
+   </FileRef>
+   <FileRef
       location = "group:SpeedrunApp.xcodeproj">
    </FileRef>
    <FileRef

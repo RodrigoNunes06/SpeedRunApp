@@ -6,6 +6,7 @@
 //  Copyright © 2018 Rodrigo Nunes Gil. All rights reserved.
 //
 
+import UIKit
 import Foundation
 import RxSwift
 import Action
@@ -19,6 +20,7 @@ class GameDetailViewModel {
     let runTimeLabel = BehaviorSubject<String>(value: "")
     var gameId = ""
     var userId = ""
+    var videoURL = ""
     
     func setup(gameLogo: String? = nil, gameTitle: String? = nil, firstRunDetail: String? = nil, playerName: String? = nil, runTimeLabel: String? = nil) {
         if let gameLogo = gameLogo {
@@ -41,6 +43,15 @@ class GameDetailViewModel {
     func onViewWillAppear() {
         requestRun(withId: gameId)
         requestUser(withId: userId)
+    }
+    
+    func openVideo() {
+        if let url = URL(string: videoURL) {
+            UIApplication.shared.open(url, options: [:], completionHandler: {
+                (success) in
+                print("Open \(self.videoURL): \(success)")
+            })
+        }
     }
     
     func requestRun(withId id: String) {

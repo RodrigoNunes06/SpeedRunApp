@@ -39,6 +39,7 @@ class GamesListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupViewModel()
         setupNavigationBar()
         setupCollectionView()
         setupFlowLayout()
@@ -54,6 +55,10 @@ class GamesListViewController: UIViewController {
     //MARK: Private Methods
     private func createViewModel() -> GamesListViewModel {
         return GamesListViewModel()
+    }
+    
+    private func setupViewModel() {
+        viewModel.setupViewModel(withPresenter: self)
     }
     
     private func setupNavigationBar() {

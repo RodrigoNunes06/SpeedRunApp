@@ -12,12 +12,17 @@ import Action
 
 class GamesListViewModel {
     
+    var presenter = UIViewController()
     var games: [Game] = []
     let getGamesUseCase = GetGamesListUseCase()
     let reloadAction = CocoaAction { return .empty() }
     
     func onViewWillAppear() {
         requestGames()
+    }
+    
+    func setupViewModel(withPresenter presenter:UIViewController) {
+        self.presenter = presenter
     }
     
     func numberOfRows(section: Int) -> Int {
@@ -35,7 +40,12 @@ class GamesListViewModel {
     }
     
     func showGameDetail(indexPath: IndexPath) {
+        let game = games[indexPath.row]
+        let gameDetail = GameDetailViewController()
         
+        gameDetail.viewModel.gameId = game.id
+        gameDetail.viewModel.setup(gameLogo: game.gameLogoURL, gameTitle: game.name)
+        presenter.navigationController?.pushViewController(gameDetail, animated: true)
     }
     
     func requestGames() {

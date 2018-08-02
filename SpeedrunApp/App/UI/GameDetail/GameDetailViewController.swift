@@ -20,7 +20,7 @@ class GameDetailViewController: UIViewController {
     @IBOutlet weak var watchVideoButton: UIButton!
     
     var viewModel: GameDetailViewModel!
-    var disposeBarg = DisposeBag()
+    var disposeBag = DisposeBag()
     
     //MARK: Initializer
     init() {
@@ -38,6 +38,7 @@ class GameDetailViewController: UIViewController {
         super.viewDidLoad()
         
         setupNavigationBar()
+        setupUI()
         setupRx()
     }
     
@@ -50,8 +51,42 @@ class GameDetailViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = .gray
     }
     
+    private func setupUI() {
+        watchVideoButton.setTitle("Watch Video", for: .normal)
+        watchVideoButton.layer.cornerRadius = 5
+        watchVideoButton.clipsToBounds = true
+    }
+    
     private func setupRx() {
+        viewModel.gameTitle.subscribe(onNext: { [weak self] title in
+            guard let `self` = self else { return }
+            
+            self.gameTitle.text = title
+        }).disposed(by: disposeBag)
         
+        viewModel.gameLogo.subscribe(onNext: { [weak self] logoUrl in
+            guard let `self` = self else { return }
+            
+            self.gameLogoImageView.kf.setImage(with: URL(string: logoUrl))
+        }).disposed(by: disposeBag)
+        
+        viewModel.firstRunDetail.subscribe(onNext: { [weak self] firstRunDetail in
+            guard let `self` = self else { return }
+            
+            self.firstRunLabel.text = firstRunDetail
+        }).disposed(by: disposeBag)
+        
+        viewModel.playerName.subscribe(onNext: { [weak self] playerName in
+            guard let `self` = self else { return }
+            
+            self.playerNameLabel.text = playerName
+        }).disposed(by: disposeBag)
+        
+        watchVideoButton.rx.tap.subscribe(onNext: { [weak self] _ in
+            guard let `self` = self else { return }
+            
+            self.viewModel.openVideo()
+        })
     }
     
 }

@@ -39,6 +39,12 @@
 		9FA25F1A211274CF008315D0 /* GameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA25F19211274CF008315D0 /* GameDetailViewController.swift */; };
 		9FA25F1C21127505008315D0 /* GameDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FA25F1B21127505008315D0 /* GameDetailViewController.xib */; };
 		9FA25F1E21127519008315D0 /* GameDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA25F1D21127519008315D0 /* GameDetailViewModel.swift */; };
+		9FA25F2021129083008315D0 /* RunEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA25F1F21129083008315D0 /* RunEntity.swift */; };
+		9FA25F22211290A1008315D0 /* RunEntityDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA25F21211290A1008315D0 /* RunEntityDataMapper.swift */; };
+		9FA25F24211290B2008315D0 /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA25F23211290B2008315D0 /* Run.swift */; };
+		9FA25F26211290BF008315D0 /* RunRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA25F25211290BF008315D0 /* RunRepository.swift */; };
+		9FA25F28211290D0008315D0 /* GetRunUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA25F27211290D0008315D0 /* GetRunUseCase.swift */; };
+		9FA25F2A211290E1008315D0 /* RunRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA25F29211290E1008315D0 /* RunRepositoryImp.swift */; };
 		FDFCFE8A1BFAAF94AF010B80 /* Pods_SpeedrunAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 333A560225F4C701062C251D /* Pods_SpeedrunAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +98,12 @@
 		9FA25F19211274CF008315D0 /* GameDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewController.swift; sourceTree = "<group>"; };
 		9FA25F1B21127505008315D0 /* GameDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameDetailViewController.xib; sourceTree = "<group>"; };
 		9FA25F1D21127519008315D0 /* GameDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewModel.swift; sourceTree = "<group>"; };
+		9FA25F1F21129083008315D0 /* RunEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunEntity.swift; sourceTree = "<group>"; };
+		9FA25F21211290A1008315D0 /* RunEntityDataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RunEntityDataMapper.swift; path = /Users/deboravilla/Desktop/rodrigo/SpeedrunApp/SpeedrunApp/Data/Entities/Mappers/RunEntityDataMapper.swift; sourceTree = "<absolute>"; };
+		9FA25F23211290B2008315D0 /* Run.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
+		9FA25F25211290BF008315D0 /* RunRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunRepository.swift; sourceTree = "<group>"; };
+		9FA25F27211290D0008315D0 /* GetRunUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRunUseCase.swift; sourceTree = "<group>"; };
+		9FA25F29211290E1008315D0 /* RunRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunRepositoryImp.swift; sourceTree = "<group>"; };
 		A01FB17076FEE7DB34342D27 /* Pods-SpeedrunApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedrunApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedrunApp/Pods-SpeedrunApp.release.xcconfig"; sourceTree = "<group>"; };
 		FCA3872154DB17E495552071 /* Pods-SpeedrunApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedrunApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedrunApp/Pods-SpeedrunApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -212,6 +224,7 @@
 				9FA25ED3210E32FD008315D0 /* Mappers */,
 				9FA25EF0210FB4CC008315D0 /* GameEntity.swift */,
 				9FA25EF2210FB4DA008315D0 /* UserEntity.swift */,
+				9FA25F1F21129083008315D0 /* RunEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -230,6 +243,7 @@
 			children = (
 				9FA25EF8210FC657008315D0 /* GameRepositoryImp.swift */,
 				9FA25EFA2110D435008315D0 /* UserRepositoryImp.swift */,
+				9FA25F29211290E1008315D0 /* RunRepositoryImp.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -239,6 +253,7 @@
 			children = (
 				9FA25EF6210FB89D008315D0 /* GameEntityDataMapper.swift */,
 				9FA25EF4210FB88F008315D0 /* UserEntityDataMapper.swift */,
+				9FA25F21211290A1008315D0 /* RunEntityDataMapper.swift */,
 			);
 			path = Mappers;
 			sourceTree = "<group>";
@@ -267,6 +282,7 @@
 			children = (
 				9FA25EE8210FA68A008315D0 /* Game.swift */,
 				9FA25EEA210FA6D9008315D0 /* User.swift */,
+				9FA25F23211290B2008315D0 /* Run.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -276,6 +292,7 @@
 			children = (
 				9FA25EEC210FA71A008315D0 /* GameRepository.swift */,
 				9FA25EEE210FA729008315D0 /* UserRepository.swift */,
+				9FA25F25211290BF008315D0 /* RunRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -286,6 +303,7 @@
 				9FA25EFE2110F341008315D0 /* BaseUseCase.swift */,
 				9FA25EFC2110F2CF008315D0 /* GetGamesListUseCase.swift */,
 				9FA25F002110F700008315D0 /* GetUserUseCase.swift */,
+				9FA25F27211290D0008315D0 /* GetRunUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -514,15 +532,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FA25F2021129083008315D0 /* RunEntity.swift in Sources */,
 				9FA25F1E21127519008315D0 /* GameDetailViewModel.swift in Sources */,
+				9FA25F2A211290E1008315D0 /* RunRepositoryImp.swift in Sources */,
 				9FA25EEF210FA729008315D0 /* UserRepository.swift in Sources */,
 				9FA25F12211228E2008315D0 /* GameCellViewModel.swift in Sources */,
 				9FA25EE0210E57CE008315D0 /* NetworkProxy.swift in Sources */,
+				9FA25F24211290B2008315D0 /* Run.swift in Sources */,
 				9FA25EF9210FC657008315D0 /* GameRepositoryImp.swift in Sources */,
 				9FA25F0E211122C0008315D0 /* GameCell.swift in Sources */,
 				9FA25EF7210FB89D008315D0 /* GameEntityDataMapper.swift in Sources */,
 				9FA25F0A211108A4008315D0 /* GamesListViewModel.swift in Sources */,
 				9FA25EE4210FA247008315D0 /* AppService.swift in Sources */,
+				9FA25F22211290A1008315D0 /* RunEntityDataMapper.swift in Sources */,
+				9FA25F28211290D0008315D0 /* GetRunUseCase.swift in Sources */,
 				9FA25EED210FA71A008315D0 /* GameRepository.swift in Sources */,
 				9F79FE60210DD7DD003EE864 /* AppDelegate.swift in Sources */,
 				9FA25EF5210FB88F008315D0 /* UserEntityDataMapper.swift in Sources */,
@@ -539,6 +562,7 @@
 				9FA25EFD2110F2CF008315D0 /* GetGamesListUseCase.swift in Sources */,
 				9FA25EE9210FA68A008315D0 /* Game.swift in Sources */,
 				9FA25EFF2110F341008315D0 /* BaseUseCase.swift in Sources */,
+				9FA25F26211290BF008315D0 /* RunRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
