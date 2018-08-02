@@ -88,11 +88,26 @@ class GameDetailViewController: UIViewController {
             self.playerNameLabel.text = playerName
         }).disposed(by: disposeBag)
         
+        viewModel.runTime.subscribe(onNext: { [weak self] time in
+            guard let `self` = self else { return }
+            
+            self.runTimeLabel.text = self.secondsToTimeString(seconds: time)
+        }).disposed(by: disposeBag)
+        
         watchVideoButton.rx.tap.subscribe(onNext: { [weak self] _ in
             guard let `self` = self else { return }
             
             self.viewModel.openVideo()
-        })
+        }).disposed(by: disposeBag)
+    }
+    
+    private func secondsToTime(seconds: Int) -> (Int, Int, Int) {
+        return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
+    }
+    
+    private func secondsToTimeString(seconds: Int) -> String {
+        let (h, m, s) = secondsToTime(seconds: seconds)
+        return "\(h)h \(m)m \(s)s"
     }
     
 }
