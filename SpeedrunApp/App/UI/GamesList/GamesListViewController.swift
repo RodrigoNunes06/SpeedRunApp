@@ -18,8 +18,8 @@ class GamesListViewController: UIViewController {
     
     private let flowLayout = UICollectionViewFlowLayout()
     
-    private let itemWidth = 180
-    private let itemHeight = 300
+    private let itemWidth = 160
+    private let itemHeight = 250
     private let horizontalMargin: CGFloat = 17.0
     private let verticalMargin: CGFloat = 17.0
     private let minimumCellSpacing: CGFloat = 10.0

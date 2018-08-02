@@ -9,7 +9,6 @@
 import UIKit
 import Foundation
 import RxSwift
-import Action
 
 class GameDetailViewModel {
     

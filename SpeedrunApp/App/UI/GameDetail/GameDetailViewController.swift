@@ -53,7 +53,7 @@ class GameDetailViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        self.navigationItem.title = "Game Detail"
+//        self.navigationItem.title = "Game Detail"
         self.navigationController?.navigationBar.barTintColor = .gray
     }
     
