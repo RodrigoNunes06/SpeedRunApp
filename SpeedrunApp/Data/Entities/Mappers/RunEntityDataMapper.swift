@@ -16,7 +16,9 @@ final class RunEntityDataMapper {
                 domain.id = id
             }
             if let players = entity.players {
-                domain.players = players
+                domain.players = players.map { userEntity in
+                    UserEntityDataMapper().transform(entity: userEntity)
+                }
             }
             if let runTime = entity.runTime {
                 domain.runTime = runTime

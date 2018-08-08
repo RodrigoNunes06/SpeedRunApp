@@ -13,7 +13,7 @@ final class RunEntity: Mappable {
     
     var id: String? = nil
     var videoLink: String? = nil
-    var players: [User]? = nil
+    var players: [UserEntity]? = nil
     var runTime: Int? = nil
     var comment: String? = nil
     
